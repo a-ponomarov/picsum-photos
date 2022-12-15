@@ -19,12 +19,11 @@ final class PhotosViewModel: ObservableObject, ErrorHandler {
     private var hideFooter: (() -> Void)?
     
     private var dataSource: UICollectionViewDiffableDataSource<Section, Photo>!
-    private var items: [Photo] = []
     
     private var task: Task<(), Never>?
     
-    var count: Int {
-        return items.count
+    private var items: [Photo] {
+        dataSource.snapshot().itemIdentifiers
     }
     
     init(photosAPI: PhotosAPI = PhotosAPI(), imagesAPI: ImagesAPI = ImagesAPI()) {
@@ -40,6 +39,11 @@ final class PhotosViewModel: ObservableObject, ErrorHandler {
         PhotoDetailsViewModel(photo: items[index])
     }
     
+    func willDisplay(_ index: Int) {
+        guard index == dataSource.snapshot().numberOfItems - 1 else { return }
+        fetch()
+    }
+    
     func fetch() {
         guard isNextPageExist, !isFetching else { return }
         task = Task { [weak self] in
@@ -49,7 +53,6 @@ final class PhotosViewModel: ObservableObject, ErrorHandler {
                 self?.isNextPageExist = isNext
                 self?.page += 1
                 self?.isFetching = false
-                self?.items.append(contentsOf: newItems)
                 self?.appendToSnapshot(newItems: newItems)
                 if !isNext {
                     self?.hideFooter?()

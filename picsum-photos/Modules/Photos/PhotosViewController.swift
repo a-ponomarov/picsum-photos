@@ -41,8 +41,7 @@ extension PhotosViewController:  UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
-        guard indexPath.item == viewModel.count - 1 else { return }
-        fetch()
+        viewModel.willDisplay(indexPath.item)
     }
     
     func collectionView(_ collectionView: UICollectionView,

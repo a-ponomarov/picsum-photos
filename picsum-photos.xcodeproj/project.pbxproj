@@ -29,9 +29,8 @@
 		B2A337A02943676800C992B5 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A3379E2943676800C992B5 /* PhotoDetailsViewController.swift */; };
 		B2A337A12943676800C992B5 /* PhotoDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A3379F2943676800C992B5 /* PhotoDetailsViewController.xib */; };
 		B2A337A3294375EA00C992B5 /* PhotoDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A337A2294375EA00C992B5 /* PhotoDetailsViewModel.swift */; };
-		B2A337A529438B6300C992B5 /* CompositionalLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A337A429438B6300C992B5 /* CompositionalLayoutExtension.swift */; };
+		B2A337A529438B6300C992B5 /* CompositionalLayoutFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A337A429438B6300C992B5 /* CompositionalLayoutFactory.swift */; };
 		B2A77C7E2944867100645A48 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A77C7D2944867100645A48 /* ErrorHandler.swift */; };
-		B2B56EE32944E0F5003359D9 /* PhotoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B56EE22944E0F4003359D9 /* PhotoItem.swift */; };
 		B2FD5C1329469D9A00B14A73 /* URLComponentsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FD5C1229469D9A00B14A73 /* URLComponentsExtension.swift */; };
 		B2FD5C1529469DB900B14A73 /* ImagesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FD5C1429469DB900B14A73 /* ImagesAPI.swift */; };
 /* End PBXBuildFile section */
@@ -72,9 +71,8 @@
 		B2A3379E2943676800C992B5 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		B2A3379F2943676800C992B5 /* PhotoDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoDetailsViewController.xib; sourceTree = "<group>"; };
 		B2A337A2294375EA00C992B5 /* PhotoDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewModel.swift; sourceTree = "<group>"; };
-		B2A337A429438B6300C992B5 /* CompositionalLayoutExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayoutExtension.swift; sourceTree = "<group>"; };
+		B2A337A429438B6300C992B5 /* CompositionalLayoutFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayoutFactory.swift; sourceTree = "<group>"; };
 		B2A77C7D2944867100645A48 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
-		B2B56EE22944E0F4003359D9 /* PhotoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoItem.swift; sourceTree = "<group>"; };
 		B2FD5C1229469D9A00B14A73 /* URLComponentsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponentsExtension.swift; sourceTree = "<group>"; };
 		B2FD5C1429469DB900B14A73 /* ImagesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,7 +155,6 @@
 			children = (
 				B276D84E2941E5530043F44F /* Photo.swift */,
 				B276D8502941E6890043F44F /* ErrorType.swift */,
-				B2B56EE22944E0F4003359D9 /* PhotoItem.swift */,
 				B28CAC292942985B000D63CA /* AppConstants.swift */,
 				B276D8562941E78F0043F44F /* ImageCacheObject.swift */,
 			);
@@ -180,6 +177,7 @@
 				B276D83C2941E37F0043F44F /* Photos.storyboard */,
 				B22D472629421D4300DD5B2C /* PhotosViewModel.swift */,
 				B276D83A2941E37F0043F44F /* PhotosViewController.swift */,
+				B2A337A429438B6300C992B5 /* CompositionalLayoutFactory.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -188,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				B276D8592941E7D00043F44F /* NSCacheExtension.swift */,
-				B2A337A429438B6300C992B5 /* CompositionalLayoutExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -352,14 +349,13 @@
 				B2FD5C1329469D9A00B14A73 /* URLComponentsExtension.swift in Sources */,
 				B2FD5C1529469DB900B14A73 /* ImagesAPI.swift in Sources */,
 				B22D472729421D4300DD5B2C /* PhotosViewModel.swift in Sources */,
-				B2B56EE32944E0F5003359D9 /* PhotoItem.swift in Sources */,
 				B276D8512941E6890043F44F /* ErrorType.swift in Sources */,
 				B28FDD5E2945F90C00B3FD80 /* ActivityIndicatorView.swift in Sources */,
 				B276D83B2941E37F0043F44F /* PhotosViewController.swift in Sources */,
 				B276D8372941E37F0043F44F /* AppDelegate.swift in Sources */,
 				B2A337A02943676800C992B5 /* PhotoDetailsViewController.swift in Sources */,
 				B276D85E2941E8800043F44F /* URLDataSession.swift in Sources */,
-				B2A337A529438B6300C992B5 /* CompositionalLayoutExtension.swift in Sources */,
+				B2A337A529438B6300C992B5 /* CompositionalLayoutFactory.swift in Sources */,
 				B276D8392941E37F0043F44F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,7 +519,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 67CSC8R9LU;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "picsum-photos/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -554,7 +550,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 67CSC8R9LU;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "picsum-photos/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

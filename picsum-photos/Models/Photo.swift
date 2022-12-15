@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct Photo: Decodable {
+struct Photo: Decodable, Hashable {
     let id: String
     let author: String
     let width: Int

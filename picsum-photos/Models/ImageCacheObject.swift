@@ -19,5 +19,3 @@ final class ImageCacheObject {
     init(entity: Entity) { self.entity = entity }
     
 }
-
-

@@ -1,5 +1,5 @@
 //
-//  CompositionalLayoutExtension.swift
+//  CompositionalLayoutFactory.swift
 //  picsum-photos
 //
 //  Created by Andrii Ponomarov on 09.12.2022.
@@ -8,9 +8,13 @@
 import Foundation
 import UIKit
 
-extension UICollectionViewCompositionalLayout {
+struct CompositionalLayoutFactory {
     
-    static var photosLayout: UICollectionViewCompositionalLayout {
+    enum LayoutType {
+        case photos
+    }
+    
+    static func layout(_ type: LayoutType) -> UICollectionViewCompositionalLayout {
         let pairGroup =
         NSCollectionLayoutGroup.vertical(layoutSize: Group.pair.layoutSize,
                                          subitems: [Item.halfHeight.layoutItem,
@@ -41,9 +45,14 @@ extension UICollectionViewCompositionalLayout {
                                                     alignment: .bottom)
 
         let section = NSCollectionLayoutSection(group: group)
-        section.boundarySupplementaryItems = [footer]
         
-        return UICollectionViewCompositionalLayout(section: section)
+        let configuration = UICollectionViewCompositionalLayoutConfiguration()
+        configuration.boundarySupplementaryItems = [footer]
+        
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        layout.configuration = configuration
+        
+        return layout
     }
     
     private enum Item {

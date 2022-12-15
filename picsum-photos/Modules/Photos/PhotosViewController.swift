@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Combine
 
 class PhotosViewController: UIViewController {
     
@@ -22,7 +21,7 @@ class PhotosViewController: UIViewController {
     
     private func setupCollectionView() {
         collectionView.delegate = self
-        collectionView.collectionViewLayout = UICollectionViewCompositionalLayout.photosLayout
+        collectionView.collectionViewLayout = CompositionalLayoutFactory.layout(.photos)
         collectionView.register(UINib(nibName: PhotoCollectionViewCell.reuseIdentifier, bundle: .main),
                                 forCellWithReuseIdentifier: PhotoCollectionViewCell.reuseIdentifier)
         collectionView.register(ActivityIndicatorView.self,
